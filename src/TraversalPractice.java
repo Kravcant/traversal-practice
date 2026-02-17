@@ -72,10 +72,20 @@ public class TraversalPractice {
   }
 
   private static int maxVal(Node<Integer> node, int max) {
-    if (node == null) { return 0; }
-    if (node.left.value > max) { return max = node.value; }
-    maxVal(node.left, max);
-    maxVal(node.right, max);
+    if (node == null)  return 0;
+    int leftMax = maxVal(node.left);
+    int rightMax = maxVal(node.right);
+    int currentMax = max;
+    if (node.value > currentMax) {
+      currentMax = node.value;
+    }
+    if (leftMax > currentMax) {
+      currentMax = leftMax;
+    }
+    if (rightMax > currentMax) {
+      currentMax = rightMax;
+    }
+    return currentMax;
   }
 
   /**
