@@ -158,4 +158,3 @@ public class TraversalPractice {
                         new Node<>(76, null, null), // 76 is the left child of 87
                         null))); // no right child of 87
   }
-}
